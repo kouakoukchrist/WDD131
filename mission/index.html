@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYU-I Mission</title>
-   <link rel="stylesheet" href="missions.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYU-I Mission</title>
+  <link rel="stylesheet" href="missions.css" />
 </head>
 
-<section class="bold">
-        <h1 class="title">MISSION STATEMENT</h1>
-        <H4 class="subtitle">Brigham Young University-IDAHO</H4>
-        <hr>
-    </section>
-
 <body id="main">
-  <main >
-    <p>Brigham Young University-Idaho was founded and is supported and guided by 
-        The Church of Jesus Christ of Latter-day Saints. Its mission is to develop 
-        disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.</p>
 
-       <i> The university does this by:</i> <br> 
+  <select id="mode">
+    <option value="">Choose Mode</option>
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+  </select>
+
+  <section class="bold">
+    <h1 class="title">MISSION STATEMENT</h1>
+    <h4 class="subtitle">Brigham Young University–Idaho</h4>
+    <hr>
+  </section>
+
+  <main>
+    <p>
+      Brigham Young University–Idaho was founded and is supported and guided by
+      The Church of Jesus Christ of Latter-day Saints. Its mission is to develop
+      disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.
+    </p>
+
+    <i>The university does this by:</i>
 
     <section id="list">
-        <ol>
-            <li>Building testimonies of the restored gospel of Jesus Christ and fostering its principles 
-                in a wholesome academic, cultural, and social environment.</li> <br> 
+      <ol>
+        <li>Building testimonies of the restored gospel of Jesus Christ and fostering its principles
+          in a wholesome academic, cultural, and social environment.</li>
 
-                <li>Providing a high-quality education that prepares students of diverse interests 
-                    and abilities for lifelong learning and employment.</li> <br> 
-                    
-                    <li>Serving as many students as possible within resource constraints. </li> <br> 
-                    <li>Delivering education that is affordable for students and the Church.</li>
-        </ol>
+        <li>Providing a high-quality education that prepares students of diverse interests
+          and abilities for lifelong learning and employment.</li>
+
+        <li>Serving as many students as possible within resource constraints.</li>
+
+        <li>Delivering education that is affordable for students and the Church.</li>
+      </ol>
     </section>
   </main>
-<footer> <br> <br>
-<img class=" logo" src="byui-logo-blue.webp" alt="BYU-I logo" height="50" width="90">
-</footer>
+
+  <footer>
+    <img id="logo" class="logo" src="byui-logo-blue.webp" alt="BYU-I logo" height="50" width="90">
+  </footer>
+
+  <!-- IMPORTANT: script goes at the bottom so HTML exists before JS runs -->
+  <script src="mission.js"></script>
 </body>
 </html>

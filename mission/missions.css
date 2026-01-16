@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 
-/* 1) Good global defaults */
+/* Global defaults */
 * {
   box-sizing: border-box;
 }
 
+/* One body rule only (no duplicates) */
 body {
   margin: 0;
+  background-color: white;
+  color: black;
   font-family: "Times New Roman", Times, serif;
-  background-color: #ffffff;
 }
 
-/* 2) Your centered content box */
+/* Centered content box */
 #main {
   max-width: 600px;
   width: 100%;
   margin: 2rem auto;
-
-  /* vertical padding | horizontal padding */
-  padding: 2rem 2rem;
+  padding: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ body {
   line-height: 1.6;
 }
 
-/* 3) Make horizontal padding smaller on small screens */
+/* Responsive spacing */
 @media (max-width: 600px) {
   #main {
     margin: 1rem auto;
@@ -38,10 +38,12 @@ body {
   }
 }
 
+/* Header section */
 .bold {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 hr {
@@ -57,21 +59,76 @@ hr {
   font-size: 1.5rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .subtitle {
   font-family: "Cinzel", serif;
   font-size: 0.9rem;
-  letter-spacing: 0.05em; /* slight spacing looks nicer */
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #4278b9;
-  text-align: center;
 }
 
-/* 4) If you have an image inside the box */
-#main img {
-  max-width: 100%;
-  height: auto;
+/* Paragraph text */
+main p {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* Italic line */
+main i {
   display: block;
+  margin-bottom: 1rem;
+}
+
+/* List spacing */
+#list ol {
+  padding-left: 1.2rem;
+}
+
+#list li {
+  margin-bottom: 1rem;
+}
+
+/* Footer + logo */
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* ----------------------- */
+/* THEME STYLES (IMPORTANT) */
+/* ----------------------- */
+
+/* Dark mode affects the page background */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+
+body.dark#main {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #555;
+}
+
+/* Light mode */
+body.light#main {
+  background-color: white;
+  color: black;
+  border-color: #a39d9d;
+}
+
+
+body.light #main {
+  background-color: white;
+  color: black;
+  border-color: #a39d9d;
 }
