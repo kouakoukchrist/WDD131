@@ -1,9 +1,13 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: Roboto, sans-serif;
 }
+
 header,
 main,
 footer {
@@ -13,9 +17,12 @@ footer {
   padding: 1rem;
   background-color: lightblue;
 }
+
 h1 {
-    text-align: center;
+  text-align: center;
+  margin: 0;
 }
+
 section {
   padding: 20px;
   background-color: white;
@@ -23,133 +30,75 @@ section {
   border: 1px solid #ccc;
 }
 
-
+/* --- Mobile-first behavior --- */
+/* Your nav is .topbar in HTML */
 .topbar {
-  display: flex;
-  align-items: center;
+  display: flex;          /* keep the nav in the layout */
   gap: 1rem;
+  align-items: flex-start; /* important for vertical dropdown */
+  flex-wrap: nowrap;
 }
 
-nav a {
-    padding: 20px;
-    color: black;
-    display: none;
-}
-nav a:hover {
-    text-decoration: none;
-    color: #616061;
-}
-.menu-btn {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-.bar1, .bar2, .bar3 {
-    width: 30px;
-    height: 4px;
-    background-color: black;
-    margin: 5px 0;
-}
-
+/* Hide links by default on small screens */
 .topbar a {
   display: none;
+  padding: 12px 16px;
+  color: black;
+  text-decoration: none;
+  width: 100%;
+}
+
+.topbar a:hover {
+  text-decoration: none;
+  color: #616061;
+}
+
+/* When JS adds .open, make it a vertical dropdown */
+.topbar.open {
+  flex-direction: column;     /* KEY FIX */
+  align-items: flex-start;
 }
 
 .topbar.open a {
   display: block;
 }
 
-
-footer {
-    text-align: center;
-}
-
-
-@media screen and (min-width: 700px) {
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-body {
-  font-family: Roboto, sans-serif;
-}
-header,
-main,
-footer {
-  max-width: 1000px;
-  margin: 1rem auto;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  background-color: lightblue;
-}
-h1 {
-    text-align: center;
-}
-section {
-  padding: 20px;
-  background-color: white;
-  margin: 1em;
-  border: 1px solid #ccc;
-}
-
-header {
- 
-  align-items: right;
-}
-
-nav a {
-    padding: 20px;
-    color: black;
-    display: none;
-}
-nav a:hover {
-    text-decoration: none;
-    color: #616061;
-}
+/* Hamburger */
 .menu-btn {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-.bar1, .bar2, .bar3 {
-    width: 30px;
-    height: 4px;
-    background-color: black;
-    margin: 5px 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  margin: 5px 0;
+}
 
 footer {
-    text-align: center;
+  text-align: center;
 }
 
-}
-@media (max-width: 600px) {
-  .topbar.open {
-  flex-direction: column;
-  align-items: flex-start;
-}
-}
-@media (min-width: 601px) and (max-width: 900px) {
-}
-    
+/* --- Desktop behavior --- */
 @media (min-width: 901px) {
+  /* hide hamburger on wide screens */
+  .menu-btn {
+    display: none;
+  }
 
-  nav {
-    margin-right: 2em;
-    display: flex;
+  /* show nav links horizontally on the right */
+  .topbar {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     gap: 1rem;
   }
 
-  nav a {
-    display: inline-block; 
-  }
-
-    .menu-btn {
-    display: none;  
-  }
-   nav {
-    display: flex;
-    justify-content: flex-end; /* pushes links to the right */
-    gap: 1rem;
+  .topbar a {
+    display: inline-block;
+    width: auto;
+    padding: 20px;
   }
 }
