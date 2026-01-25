@@ -132,6 +132,6 @@ nav.open a:last-child {
   nav.open a {
     display: inline-block;
     border: none;
-    padding: 21px;
+    padding: 20px;
   }
 }
