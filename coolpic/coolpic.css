@@ -1,0 +1,139 @@
+/* =========================
+   Global Reset
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* =========================
+   Header & Footer
+========================= */
+header,
+footer {
+  background-color: rgb(3, 91, 120);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   Navigation
+========================= */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.menu-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  color: #ffffff;
+  border-color: #950b95;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-links a:hover {
+  color: #950b95;
+}
+
+/* Toggle class */
+.nav-links.open {
+  display: flex;
+}
+
+/* =========================
+   Main Layout
+========================= */
+main {
+  background-color: rgb(177, 183, 184);
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* =========================
+   Gallery (Mobile First)
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+footer{
+  color: #ffffff;
+}
+
+/* =========================
+   Tablet
+========================= */
+@media (min-width: 451px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   Desktop
+========================= */
+@media (min-width: 701px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

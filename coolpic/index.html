@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="coolpic.css">
 </head>
 <body>
-    <header id>
-        <h1>Cool Pics 📸</h1>
-        <nav>
-     <!-- Small Sceeen  -->
-     <a href="#" class="smallscreen">Menu</a>
-     <!-- Desktop Screen -->
-   <div class="desktop">
-     <a href="#">Home</a>
-     <a href="#">People</a>
-     <a href="#">Places</a>
-     <a href="#">Contact</a>
-   </div>
-        </nav>
+<header>
+  <h1>Cool Pics 📸</h1>
+
+  <nav>
+    <!-- Mobile / Tablet -->
+    <button class="menu-btn" id="menuBtn">☰ Menu</button>
+
+    <!-- Links -->
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">People</a>
+      <a href="#">Places</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+</header>
+
+
     
     </header>
 
     <main>
-    <h2>Current Work</h2>
-    <section>
+    <div class="container">
+        <h2>Current Work</h2>
+    <section class="gallery">
         <img src="norris-sm.jpg" alt="work">
         <img src="norris-sm.jpg" alt="work">
         <img src="norris-sm.jpg" alt="work">
@@ -36,8 +42,11 @@
         <img src="norris-sm.jpg" alt="work">
         <img src="norris-sm.jpg" alt="work">
     </section>
+    </div>
     </main>
 
     <footer> &copy; Christ Kouakou</footer>
+
+    <script src="cool.js"> </script>
 </body>
 </html>
