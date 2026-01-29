@@ -62,7 +62,7 @@ header {
   opacity: 0;
 }
 .menu-btn.active .bar3 {
-  transform: rotate(-45deg) translate(8px, -8px);
+  transform: rotate(-45deg) translate(9px, -9px);
 }
 
 /* nav links hidden by default on mobile/tablet */
