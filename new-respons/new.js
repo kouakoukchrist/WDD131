@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+});
+
 
 const gallery = document.querySelector('.gallery');
 const modal = document.querySelector('dialog');

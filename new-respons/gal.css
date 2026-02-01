@@ -1,70 +1,154 @@
-
+/* =========================
+   Base & Typography
+========================= */
 h1 {
-    text-align: center;
-    margin: 35px 0;
+  text-align: center;
+  margin: 35px 0;
 }
+
+header,
+footer {
+  background-color: rgb(3, 91, 120);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* =========================
+   Navigation & Menu Button
+========================= */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.menu-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  /* position: absolute;  <- Optional: uncomment if you want it floating left */
+}
+
+.menu-btn:hover {
+  color: #ffffff;
+  border-color: #950b95;
+}
+
+.nav-links {
+  display: none; /* Hidden by default on mobile */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-links.open {
+  display: flex; /* Shown when JS toggles .open */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-links a:hover {
+  color: #950b95;
+}
+
+/* =========================
+   Gallery Grid
+========================= */
 .gallery {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* Added gap for breathing room */
 }
+
 figure img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    padding: 5px;
-    background-color: white;
-    box-shadow: 5px 5px 15px black;
-    display: block;
-    margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  padding: 5px;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.5); /* Softened the black shadow slightly */
+  display: block;
+  margin: 0 auto;
 }
-/* modal */
+
+/* =========================
+   Modal / Dialog
+========================= */
+
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .85);
+  border: none;
+}
 
 dialog img {
-    width: 90%;
-    display: block;
-    margin: 20vh auto;
-}
-dialog {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.75);
-}
-.close-viewer {
-    position: absolute;
-    top: 10vh;
-    right: 2vh;
-    padding: 3px 6px;
-    font-size: 1.5em;
-    color: rgb(68, 4, 4);
-    background-color: rgb(81, 166, 32);
+  width: 90%;
+  max-height: 70vh; /* Prevents image from being taller than screen */
+  object-fit: contain;
+  display: block;
+  margin: 15vh auto;
 }
 
+.close-viewer {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  color: rgb(68, 4, 4);
+  background-color: lightblue;
+  border: none;
+  cursor: pointer;
+}
+
+footer{
+    color: #ffffff;
+}
+
+/* =========================
+   Responsive Breakpoints
+========================= */
+
+/* Tablet */
 @media screen and (min-width: 700px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
+/* Desktop */
 @media screen and (min-width: 1000px) {
-    .gallery {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    dialog img {
-        width: 60%;
-        margin: 15vh auto;
-    }
-    .close-viewer {
-        position: absolute;
-        right: 15vh;
-    }
-    .viewer {
-        margin: 50px;
-        padding: 50px;
-    }
-    .viewer img {
-        max-width: 800px;
-    }
+  .menu-btn {
+    display: none; /* Hide hamburger */
+  }
+
+  .nav-links {
+    display: flex; /* Always show links on desktop */
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  dialog img {
+    width: 60%;
+    margin: 10vh auto;
+  }
+
+  .close-viewer {
+    right: 10vw;
+  }
 }
-          
