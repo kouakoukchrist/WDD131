@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  border: 2px solid #000;   /* full device width */
+  padding: 1rem;            /* space inside border */
+  font-family: Cambria, Georgia, "Times New Roman", serif;
+  box-sizing: border-box;
+}
+
+
+
+/* header */
+header h1 {
+  text-align: center;
+  margin: 0.5rem 0 0.75rem;
+  
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: 1px solid #d9a66a;
+  border-bottom: 1px solid #d9a66a;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;   /* ← this creates space to the next gold bar */
+
+}
+main {
+  border-top: 1px solid #d9a66a;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.nav-links a { text-decoration: none; 
+    color: rgb(171, 19, 19);
+}
+
+/* ===== MOBILE DEFAULT (stacked) ===== */
+.review {
+  padding: 1rem 0;
+}
+
+.meta {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.meta p { margin: 0.25rem 0; }
+
+.content h2 {
+  margin: 0 0 0.75rem;
+  color: rgb(171, 19, 19);
+}
+
+.content img {
+  display: block;
+  max-width: 170px;
+  width: 100%;
+  margin: 0.75rem auto;
+}
+
+footer {
+  border-top: 1px solid #d9a66a;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  text-align: center;
+}
+
+/* ===== LARGER DEVICE (side-by-side) ===== */
+@media (min-width: 700px) {
+  .review {
+    display: grid;
+    grid-template-columns: 140px 1fr; 
+    gap: 2rem;
+    /* Change 'start' to 'stretch' so the meta height matches the content height */
+    align-items: stretch; 
+    margin-right: 5%;
+    margin-left: 15%;
+
+  }
+
+  .meta {
+    text-align: right;
+    margin: 0;
+    border-right: 1px solid #d9a66a;
+    padding-right: 1rem;
+    /* Ensure height fills the grid cell */
+    height: 100%; 
+  }
+
+  .content img {
+    margin: 0.5rem 0; 
+    display: block;
+    max-width: 170px;
+    width: 100%;
+    margin: 0.75rem auto;
+  }
+}
