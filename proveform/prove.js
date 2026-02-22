@@ -40,7 +40,7 @@ function submitHandler(event) {
     }
 
     
-    form.innerHTML = '<h2>Thank you for your purchase.</h2>';
+    form.innerHTML = '<h2>Payment Was Successfull.</h2>';
 }
 
 // 3. Attach the listener to the form
