@@ -101,10 +101,6 @@ hr {
   margin: 10px 0;
 }
 
-.rating {
-  margin-bottom: 10px;
-  color: #FFD700;
-}
 
 .description {
   display: none;
@@ -153,10 +149,6 @@ footer {
     align-items: flex-start;
     width: 55%;
     padding: 15px 20px; 
-  }
-
-  .button {
-    margin-top: 0;
   }
 
   .description {
