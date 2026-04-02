@@ -1,0 +1,106 @@
+.inventory {
+  padding: 24px 16px;
+  background: var(--gray);
+}
+
+.inventory h2 {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.inventory-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: 12px 20px;
+  width: 100%;
+  margin: 0 auto 32px;
+}
+
+.inventory-search input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  color: var(--black);
+}
+
+.inventory-search img {
+  width: 18px;
+  height: 18px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.car-card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  padding: 16px;
+}
+
+.card-info h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+.card-info p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.card-info hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+.card-info .price {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--red);
+}
+
+@media (min-width: 768px) {
+  .inventory {
+    padding: 40px;
+  }
+
+  .inventory h2 {
+    font-size: 1.5rem;
+  }
+
+  .inventory-search {
+    width: 50%;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
