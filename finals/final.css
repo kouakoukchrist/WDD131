@@ -36,8 +36,13 @@ header {
 #hamburger {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
 }
 
 #hamburger span {
@@ -70,6 +75,9 @@ header {
   color: var(--black);
   text-decoration: none;
   font-weight: 500;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 #nav-links a:hover {
@@ -109,6 +117,10 @@ header {
 #nav-search img {
   width: 16px;
   height: 16px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 14px;
+  cursor: pointer;
 }
 
 .banner {
@@ -324,6 +336,9 @@ footer a {
   text-decoration: none;
   display: block;
   margin-bottom: 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 footer a:hover {
@@ -354,6 +369,14 @@ footer a:hover {
   width: 36px;
   height: 36px;
   filter: invert(1);
+}
+
+.footer-social a {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Desktop */
