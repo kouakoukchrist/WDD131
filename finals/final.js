@@ -87,58 +87,56 @@ const cars = [
 
 
 let container = document.querySelector(".cards-container");
-let input = document.querySelectorAll('input[type="text"]');
-const searchTab = container.innerHTML;
 
+if (container) {
+  let input = document.querySelectorAll('input[type="text"]');
 
-function cardTemplate(card){
-    return `
-      <div class="car-card">
+  function cardTemplate(card){
+      return `
+        <div class="car-card">
 
-        <img src="${card.image}" alt="${card.name}">
-        <div class="card-info">
-          <h3>${card.name}</h3>
-          <p>${card.trim} ${card.miles}</p>
-          <hr>
-          <p>${card.condition}</p>
-          <p class="price">${card.price}</p>
+          <img src="${card.image}" alt="${card.name}">
+          <div class="card-info">
+            <h3>${card.name}</h3>
+            <p>${card.trim} ${card.miles}</p>
+            <hr>
+            <p>${card.condition}</p>
+            <p class="price">${card.price}</p>
+          </div>
+
         </div>
+      `
+  }
 
-      </div>
-    `
-}
+  function displayCars(carsList) {
+    container.innerHTML = '';
+    carsList.forEach(car => {
+      container.innerHTML += cardTemplate(car);
+    });
+  }
+  displayCars(cars);
 
-function displayCars(carsList) {
-  container.innerHTML = '';
-  carsList.forEach(car => {
-    container.innerHTML += cardTemplate(car);
+  input.forEach(element => {
+      element.addEventListener('input', () => {
+          let query = element.value;
+
+          if (query === '') {
+       displayCars(cars);
+       } else {
+          let filteredSearch = cars.filter(function(car){
+          return (
+              car.name.toLowerCase().includes(query.toLowerCase()) ||
+              car.trim.toLowerCase().includes(query.toLowerCase()) ||
+              car.miles.toLowerCase().includes(query.toLowerCase()) ||
+              car.condition.toLowerCase().includes(query.toLowerCase()) ||
+              car.price.toLowerCase().includes(query.toLowerCase())
+
+          );
+      })
+           displayCars(filteredSearch);
+        }
+      });
   });
 }
-displayCars(cars);
-
-
-
-
-input.forEach(element => {
-    element.addEventListener('input', () => {
-        let query = element.value;
-
-        if (query === '') {
-     displayCars(cars);
-     } else {
-        let filteredSearch = cars.filter(function(car){
-        return (
-            car.name.toLowerCase().includes(query.toLowerCase()) ||
-            car.trim.toLowerCase().includes(query.toLowerCase()) ||
-            car.miles.toLowerCase().includes(query.toLowerCase()) ||
-            car.condition.toLowerCase().includes(query.toLowerCase()) ||
-            car.price.toLowerCase().includes(query.toLowerCase())
-            
-        );
-    })
-         displayCars(filteredSearch);
-      }
-    });
-});
 
 
