@@ -1,7 +1,19 @@
- let searchBanner = document.getElementById('bannersearch')
+let searchBanner = document.getElementById('bannersearch');
 
-searchBanner.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-       window.location.href = "inventory.html";
-    }
-});
+if (searchBanner) {
+    searchBanner.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+           window.location.href = "inventory.html";
+        }
+    });
+}
+
+let searchHeader = document.getElementById('navsearch');
+
+if (searchHeader) {
+    searchHeader.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+           window.location.href = "inventory.html";
+        }
+    });
+}

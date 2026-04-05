@@ -125,10 +125,10 @@ if (container) {
        } else {
           let filteredSearch = cars.filter(function(car){
           return (
-              car.name.toLowerCase().includes(query.toLowerCase()),
-              car.trim.toLowerCase().includes(query.toLowerCase()),
-              car.miles.toLowerCase().includes(query.toLowerCase()) ,
-              car.condition.toLowerCase().includes(query.toLowerCase()),
+              car.name.toLowerCase().includes(query.toLowerCase()) |
+              car.trim.toLowerCase().includes(query.toLowerCase()) |
+              car.miles.toLowerCase().includes(query.toLowerCase()) |
+              car.condition.toLowerCase().includes(query.toLowerCase()) |
               car.price.toLowerCase().includes(query.toLowerCase())
 
           );
